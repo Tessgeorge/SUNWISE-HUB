@@ -1,0 +1,33 @@
+<!-- Sunlight Exposure Tracker Section -->
+<section class="tracker-section">
+    <h2>Real-Time Sun Exposure Tracker</h2>
+    <p>Enter your location to get real-time UV index data and sunlight exposure recommendations.</p>
+    <button id="get-uv-button">Get UV Index</button>
+    <button id="more-info-button">Give more info</button> <!-- The "Give more info" button -->
+    <div id="uv-result"></div> <!-- Placeholder for UV result -->
+</section>
+
+<script>
+    function getUVIndex() {
+        const resultDiv = document.getElementById('uv-result');
+        const uvIndex = Math.floor(Math.random() * 11);
+        const uvMessage = `The current UV index is ${uvIndex}. ` + 
+            (uvIndex > 7 
+            ? '<span class="alert">Be cautious! High UV exposure.</span>' 
+            : 'Moderate to low exposure. Stay safe!');
+
+        resultDiv.innerHTML = uvMessage;
+    }
+
+    function giveMoreInfo() {
+        alert('More information about UV exposure:\n' +
+              '- UV index ranges from 0 to 11+\n' +
+              '- A higher UV index means greater potential for damage to skin and eyes.\n' +
+              '- Recommendations include wearing sunscreen, protective clothing, and sunglasses.\n' +
+              '- Seek shade during peak hours of sunlight.');
+    }
+
+    // Add event listeners for the buttons
+    document.getElementById('get-uv-button').addEventListener('click', getUVIndex);
+    document.getElementById('more-info-button').addEventListener('click', giveMoreInfo);
+</script>

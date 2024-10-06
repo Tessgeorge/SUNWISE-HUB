@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SunWise Hub - Health & Solar</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic styles for the buttons and layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .cta-button, button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* For the CTA button */
+            display: inline-block; /* Ensures button and anchor display similarly */
+            margin-top: 10px;
+        }
+
+        .cta-button:hover, button:hover {
+            background-color: #0056b3;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .highlights {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .highlight {
+            text-align: center;
+            max-width: 250px;
+        }
+
+        .highlight i {
+            font-size: 50px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .contact-section {
+            color: #2E8B57; /* Change this to any color you prefer */
+        }
+
+        .contact-section a {
+            color: #FFD700; /* Color for links in contact section */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>SunWise Hub - Harness the Power of the Sun: For Your Health and a Sustainable Future</h1>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <h2>Welcome to SunWise Hub</h2>
+        <p>Our platform is designed to help you harness the power of the sun in two key areas: improving your health by optimizing your sunlight exposure, and promoting sustainability by discovering the solar energy potential in your everyday life.</p>
+
+        <!-- Quick Highlights Section -->
+        <div class="highlights">
+            <div class="highlight">
+                <i class="fas fa-sun"></i> <!-- Sunlight Icon -->
+                <h3>Track Sunlight Exposure</h3>
+                <p>Monitor your sunlight exposure in real-time and gain insights into how it benefits your health, while staying safe from harmful UV rays.</p>
+            </div>
+            <div class="highlight">
+                <i class="fas fa-solar-panel"></i> <!-- Solar Energy Icon -->
+                <h3>Optimize Solar Energy</h3>
+                <p>Discover the solar energy potential of your location and learn how you can reduce your carbon footprint by harnessing clean, renewable energy.</p>
+            </div>
+        </div>
+        <a href="explore.html" class="cta-button">Explore Now</a> <!-- Updated Link -->
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-section">
+        <h2>Contact Information</h2>
+        <p>Email: <a href="mailto:info@solarhealth.com">info@solarhealth.com</a></p>
+        <p>Phone: <a href="tel:+919480274512">+91 94802 74512</a></p>
+        <p>Address: 123 Solar Avenue, Eco City, Green State, 45678</p>
+        <p>Support: <a href="mailto:support@solarhealth.com">support@solarhealth.com</a></p>
+        <p>Business Inquiries: <a href="mailto:business@solarhealth.com">business@solarhealth.com</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 SunWise Hub. All rights reserved. | <a href="#">Privacy Policy</a></p>
+        <p>Contact us at: <a href="mailto:info@solarhealth.com" style="color: #FFD700;">info@solarhealth.com</a> | Phone: <a href="tel:+919480274512" style="color: #FFD700;">+91 94802 74512</a></p>
+    </footer>
+
+    <script>
+        // Debugging code to verify the link works
+        document.querySelector('.cta-button').addEventListener('click', function(event) {
+            console.log('Explore button clicked');
+            // Uncomment the following line to prevent the default action for testing
+            // event.preventDefault();
+            alert('You are about to navigate to the Explore page.');
+        });
+    </script>
+
+</body>
+</html>

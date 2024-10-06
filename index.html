@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SunWise Hub - Health & Solar</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic styles for the buttons and layout */
+        .cta-button, button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* For the CTA button */
+            display: inline-block; /* Ensures button and anchor display similarly */
+            margin-top: 10px;
+        }
+
+        .cta-button:hover, button:hover {
+            background-color: #0056b3;
+        }
+
+        #more-info-button {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        #more-info-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .tracker-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Image Overlay -->
+    <div class="overlay"></div>
+
+    <div class="container">
+        <h1>Harness the Power of the Sun: For Your Health and a Sustainable Future</h1>
+        <p>Track your sunlight exposure, optimize your solar energy use, and live a healthier, greener life with SunWise Hub.</p>
+        <a href="explore.html" class="cta-button">Explore Now</a> <!-- Updated Link -->
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <h2>Welcome to SunWise Hub</h2>
+        <p>Our platform is designed to help you harness the power of the sun in two key areas: improving your health by optimizing your sunlight exposure, and promoting sustainability by discovering the solar energy potential in your everyday life.</p>
+
+        <!-- Quick Highlights Section -->
+        <div class="highlights">
+            <div class="highlight">
+                <i class="fas fa-sun"></i> <!-- Sunlight Icon -->
+                <h3>Track Sunlight Exposure</h3>
+                <p>Monitor your sunlight exposure in real-time and gain insights into how it benefits your health, while staying safe from harmful UV rays.</p>
+            </div>
+            <div class="highlight">
+                <i class="fas fa-solar-panel"></i> <!-- Solar Energy Icon -->
+                <h3>Optimize Solar Energy</h3>
+                <p>Discover the solar energy potential of your location and learn how you can reduce your carbon footprint by harnessing clean, renewable energy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sunlight Exposure Tracker Section -->
+    <section class="tracker-section">
+        <h2>Real-Time Sun Exposure Tracker</h2>
+        <p>Enter your location to get real-time UV index data and sunlight exposure recommendations.</p>
+        <button id="get-uv-button">Get UV Index</button>
+        <button id="more-info-button">Give more info</button> <!-- The "Give more info" button -->
+        <p id="uv-index-status">The current UV index is 5. Moderate to low exposure. Stay safe!</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 SunWise Hub. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('more-info-button').addEventListener('click', function() {
+            alert('More information about UV exposure:\n- UV index ranges from 0 to 11+\n- A higher UV index means greater potential for damage to skin and eyes\n- Recommendations include wearing sunscreen, protective clothing, and sunglasses.');
+        });
+
+        // You can add more functionality for the "Get UV Index" button here
+        document.getElementById('get-uv-button').addEventListener('click', function() {
+            // Code to fetch UV index can be added here
+            alert('Functionality to get UV index not yet implemented.');
+        });
+    </script>
+    
+</body>
+</html>

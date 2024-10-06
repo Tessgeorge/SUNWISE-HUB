@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            display: flex; /* Added to center content */
+            justify-content: center; /* Horizontally centers */
+            align-items: center; /* Vertically centers */
+        }
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent for better visibility */
+            padding: 40px; /* Adjusted padding */
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            width: 300px; /* Increased width for better layout */
+            text-align: center;
+            position: relative; /* For stacking order */
+            z-index: 1; /* Ensure it is above the video */
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+        input[type="text"], input[type="password"] {
+            padding: 10px;
+            margin-bottom: 10px; /* Adjusted margin */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px; /* Slightly increased border radius */
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        p {
+            margin-top: 14px;
+            font-size: 14px;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* Mobile-friendly layout */
+        @media (max-width: 600px) {
+            .login-container {
+                width: 90%; /* Full width on smaller screens */
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop class="video-background">
+        <source src="image.login.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="login-container">
+        <h2>Login Form</h2>
+        <form action="contactinfo.html" method="GET">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="checkbox" id="rememberme" name="rememberme">
+            <label for="rememberme">Remember me</label>
+
+            <input type="submit" value="Login" class="btn">
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+        </form>
+    </div>
+</body>
+</html>

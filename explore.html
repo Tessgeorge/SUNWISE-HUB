@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SunWise Hub - Explore</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #c6c3d0; /* Background color */
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center horizontally */
+        }
+
+        .container {
+            max-width: 800px; /* Set max width for the main content */
+            padding: 40px; /* Add padding */
+            background: rgba(97, 134, 157, 0.64); /* Background color for the container */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(185, 12, 12, 0.2); /* Box shadow */
+            text-align: center; /* Center text */
+            margin-bottom: 20px; /* Space below the container */
+        }
+
+        h1 {
+            margin-bottom: 20px; /* Space below the heading */
+            font-size: 40px; /* Heading font size */
+            color: rgb(30, 29, 29); /* Dark text */
+        }
+
+        p {
+            font-size: 20px; /* Paragraph font size */
+            line-height: 1.6; /* Line height */
+            color: white; /* White text */
+            margin-bottom: 30px; /* Space below paragraphs */
+        }
+
+        .cta-button {
+            display: inline-block; /* Block for button */
+            padding: 15px 30px; /* Button padding */
+            background-color: #34a853; /* Button background */
+            color: white; /* Button text color */
+            border-radius: 5px; /* Rounded button corners */
+            text-decoration: none; /* No underline */
+            font-size: 18px; /* Button font size */
+        }
+
+        .cta-button:hover {
+            background-color: #2c9e47; /* Button hover color */
+        }
+
+        section {
+            width: 100%; /* Full width for section */
+            padding: 20px; /* Padding for section */
+            background-color: #191818; /* Light background for section */
+            border-radius: 10px; /* Rounded corners for section */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Box shadow for section */
+        }
+
+        .feature {
+            margin: 20px 0; /* Margin around features */
+            padding: 20px; /* Padding inside features */
+            background-color: #548e98; /* Background for feature blocks */
+            border-radius: 10px; /* Rounded corners for features */
+            box-shadow: 0 2px 5px rgba(236, 140, 6, 0.1); /* Shadow for features */
+            text-align: left; /* Align text to the left */
+        }
+
+        h2 {
+            font-size: 28px; /* Feature heading font size */
+            margin-bottom: 10px; /* Space below feature headings */
+        }
+
+        .btn {
+            display: inline-block; /* Button block display */
+            padding: 10px 20px; /* Button padding */
+            background-color: #007bff; /* Blue button background */
+            color: white; /* Button text color */
+            border-radius: 5px; /* Rounded button corners */
+            text-decoration: none; /* No underline */
+            margin-top: 10px; /* Space above buttons */
+        }
+
+        .btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        footer {
+            background: rgb(121, 127, 149); /* Footer background color */
+            color: white; /* Footer text color */
+            text-align: center; /* Center text in footer */
+            padding: 20px; /* Padding for footer */
+            width: 100%; /* Full width for footer */
+            position: relative; /* Position for footer */
+            bottom: 0; /* Stick to bottom */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Explore SunWise Hub</h1>
+        <p>Explore the key areas where SunWise Hub helps you harness the power of the sun.</p>
+        <a href="contactinfo.html" class="cta-button">Go Back</a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="sunlight-section" id="sunlight-section">
+        <!-- Real-Time Sun Exposure Tracker -->
+        <div class="feature">
+            <h2>Real-Time Sun Exposure Tracker</h2>
+            <p>Enter your location to get real-time UV index data and sunlight exposure recommendations.</p>
+            <button class="btn" onclick="getUVIndex()">Get UV Index</button>
+            <a href="more-info.html" class="btn">Give More Info</a> <!-- Link to new page -->
+            <div id="uv-result" class="result"></div>
+        </div>
+        
+        
+
+        <!-- Health Benefits Tracker -->
+        <div class="feature">
+            <h2>Health Benefits Tracker</h2>
+            <p>Log your sunlight exposure and track health benefits like improved mood, vitamin D synthesis, and more.</p>
+            <label for="sun-hours">Enter hours of sun exposure today:</label>
+            <input type="number" id="sun-hours" placeholder="e.g., 2" min="0" max="12">
+            <button class="btn" onclick="trackHealthBenefits()">Track Health Benefits</button>
+            <div id="health-result" class="result"></div>
+        </div>
+
+        <!-- Sunlight & Health Info -->
+        <div class="feature">
+            <h2>Health Benefits of Sunlight</h2>
+            <p>Sunlight exposure is vital for producing Vitamin D, regulating sleep cycles, and boosting mood. But too much exposure can increase the risk of skin cancer. Balance is key!</p>
+            <button class="btn" onclick="showHealthBenefits()">Learn More</button>
+            <div id="health-info" class="result"></div>
+        </div>
+        <div class="feature">
+            <h2>Solar Energy Calculator</h2>
+            <p>Click below to calculate solar energy</p>
+            <a href="solar.html" class="btn">Solar Energy Calculator</a>
+        </div>
+    </section>
+
+    <script>
+        function getUVIndex() {
+            const resultDiv = document.getElementById('uv-result');
+            const uvIndex = Math.floor(Math.random() * 11);
+            const uvMessage = `The current UV index is ${uvIndex}. ` + 
+                (uvIndex > 7 
+                ? '<span class="alert">Be cautious! High UV exposure.</span>' 
+                : 'Moderate to low exposure. Stay safe!');
+
+            resultDiv.innerHTML = uvMessage;
+        }
+
+        function trackHealthBenefits() {
+            const sunHours = document.getElementById('sun-hours').value;
+            let healthBenefit = 'Please enter the number of hours of sun exposure.';
+            if (sunHours > 0 && sunHours <= 2) {
+                healthBenefit = 'You’ve had moderate sun exposure today. Great for mood improvement and vitamin D!';
+            } else if (sunHours > 2 && sunHours <= 5) {
+                healthBenefit = 'You’re getting optimal sun exposure for vitamin D synthesis. Keep it up!';
+            } else if (sunHours > 5) {
+                healthBenefit = 'Careful! Too much sun exposure could lead to sunburn or skin damage.';
+            }
+            document.getElementById('health-result').innerHTML = healthBenefit;
+        }
+
+        function showHealthBenefits() {
+            const healthInfoDiv = document.getElementById('health-info');
+            const healthBenefits = 'Sunlight exposure plays a crucial role in synthesizing Vitamin D, which is vital for maintaining strong bones and preventing conditions like osteoporosis. In addition to its benefits for bone health, Vitamin D also supports immune function, helping your body fend off illnesses. Regular exposure to sunlight can improve your overall mood by increasing serotonin levels, a neurotransmitter linked to feelings of happiness. Embracing a healthy amount of sunlight can be a simple yet effective way to enhance both your physical and mental health.';
+            healthInfoDiv.innerHTML = healthBenefits;
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024 SunWise Hub. All rights reserved. | <a href="#" style="color: white;">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>
